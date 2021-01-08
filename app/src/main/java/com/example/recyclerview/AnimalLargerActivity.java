@@ -51,8 +51,8 @@ public class AnimalLargerActivity extends AppCompatActivity {
     public void setUpGlide(Contact contact, ImageView holder){
         Glide.with(AnimalLargerActivity.this) //1
                 .load(contact.getImageUrl())
-                .placeholder(R.drawable.ic_launcher_background)
-                .error(R.drawable.ic_launcher_background)
+//                .placeholder(R.mipmap.koala)
+//                .error(R.mipmap.koala)
                 .skipMemoryCache(true) //2
                 .into(holder);
 //        RequestOptions options = new RequestOptions()
