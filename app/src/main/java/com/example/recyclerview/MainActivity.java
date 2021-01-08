@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                         try {
                             System.out.println(response);
                             image = response.getString(nameOfLink);
-                            contacts.add(new Contact(name, description, image));
+                            contacts.add(new Contact(name, description, image, MainActivity.this));
                             if(lastContact){
                                 displayCards();
                             }

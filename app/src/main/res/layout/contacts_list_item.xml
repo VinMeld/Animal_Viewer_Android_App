@@ -36,6 +36,13 @@
             android:layout_below="@+id/txtEmail"
             android:layout_marginTop="8dp"
             android:src="@drawable/ic_launcher_background" />
+        <ImageView
+            android:id="@+id/enlargePhoto"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_toRightOf="@+id/txtName"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/ic_largephoto"/>
 
     </RelativeLayout>
 
