@@ -1,6 +1,7 @@
 package com.example.recyclerview;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,33 +51,41 @@ public class ContactsRecViewAdapter extends RecyclerView.Adapter<ContactsRecView
         holder.enlargePhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(context, AnimalLargerActivity.class);
+                intent.putExtra("contact", contacts.get(position));
+                context.startActivity(intent);
                 Toast.makeText(context, "Enlarging photo", Toast.LENGTH_SHORT).show();
             }
         });
-        holder.parent.setOnClickListener(new View.OnClickListener(){
+        holder.image.setOnClickListener(new View.OnClickListener(){
           @Override
           public void onClick(View v) {
               if(contacts.get(position).getName().equals("Koala")){
-                  contacts.get(position).changeImage();
-                  setUpGlide(contacts.get(position), holder);
+                  System.out.println("clicked Koala");
+                  contacts.get(position).changeImage(holder);
               } else if(contacts.get(position).getName().equals("Dog")){
-                  contacts.get(position).changeImage();
-                  setUpGlide(contacts.get(position), holder);
+                  System.out.println("clicked Dog");
+
+                  contacts.get(position).changeImage(holder);
               }else if(contacts.get(position).getName().equals("Fox")){
-                  contacts.get(position).changeImage();
-                  setUpGlide(contacts.get(position), holder);
+                  System.out.println("clicked Fox");
+                  contacts.get(position).changeImage(holder);
               } else if(contacts.get(position).getName().equals("Panda")){
-                  contacts.get(position).changeImage();
-                  setUpGlide(contacts.get(position), holder);
+                  System.out.println("clicked Panda");
+
+                  contacts.get(position).changeImage(holder);
               } else if(contacts.get(position).getName().equals("Cat")){
-                  contacts.get(position).changeImage();
-                  setUpGlide(contacts.get(position), holder);
+                  System.out.println("clicked Cat");
+
+                  contacts.get(position).changeImage(holder);
               } else if(contacts.get(position).getName().equals("Bird")){
-                  contacts.get(position).changeImage();
-                  setUpGlide(contacts.get(position), holder);
+                  System.out.println("clicked Bird");
+
+                  contacts.get(position).changeImage(holder);
               }
           }
         });
+        System.out.println("Glide outside");
         Glide.with(context)
                 .asBitmap()
                 .load(contacts.get(position).getImageUrl())
@@ -93,7 +102,7 @@ public class ContactsRecViewAdapter extends RecyclerView.Adapter<ContactsRecView
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private ImageView image, enlargePhoto;
+        public ImageView image, enlargePhoto;
         private TextView txtName, txtEmail;
         private CardView parent;
         public ViewHolder(@NonNull View itemView) {
@@ -106,6 +115,7 @@ public class ContactsRecViewAdapter extends RecyclerView.Adapter<ContactsRecView
         }
     }
     public void setUpGlide(Contact contact, ViewHolder holder){
+        System.out.println("setUpGlide");
         Glide.with(context)
                 .asBitmap()
                 .load(contact.getImageUrl())

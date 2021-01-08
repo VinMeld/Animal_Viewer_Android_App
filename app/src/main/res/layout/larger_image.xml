@@ -3,9 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@mipmap/ic_launcher"
-    android:id="@+id/animalImage">
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/imageAnimal"
+        android:src="@mipmap/ic_launcher"/>
     <TextView
         android:id="@+id/animal"
         android:textSize="40sp"
@@ -13,5 +16,6 @@
         android:layout_height="wrap_content"
         android:text="Animal"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"/>
 </RelativeLayout>
