@@ -57,28 +57,22 @@ public class ContactsRecViewAdapter extends RecyclerView.Adapter<ContactsRecView
           @Override
           public void onClick(View v) {
               if(contacts.get(position).getName().equals("Koala")){
-                  String URL = "https://some-random-api.ml/img/koala";
-                  contacts.get(position).changeImage(URL, "link");
+                  contacts.get(position).changeImage();
                   setUpGlide(contacts.get(position), holder);
               } else if(contacts.get(position).getName().equals("Dog")){
-                  String URL = "https://dog.ceo/api/breeds/image/random";
-                  contacts.get(position).changeImage(URL, "message");
+                  contacts.get(position).changeImage();
                   setUpGlide(contacts.get(position), holder);
               }else if(contacts.get(position).getName().equals("Fox")){
-                  String URL = "https://randomfox.ca/floof/?ref=apilist.fun";
-                  contacts.get(position).changeImage(URL, "image");
+                  contacts.get(position).changeImage();
                   setUpGlide(contacts.get(position), holder);
               } else if(contacts.get(position).getName().equals("Panda")){
-                  String URL = "https://some-random-api.ml/img/panda";
-                  contacts.get(position).changeImage(URL, "link");
+                  contacts.get(position).changeImage();
                   setUpGlide(contacts.get(position), holder);
               } else if(contacts.get(position).getName().equals("Cat")){
-                  String URL = "https://some-random-api.ml/img/cat";
-                  contacts.get(position).changeImage(URL, "link");
+                  contacts.get(position).changeImage();
                   setUpGlide(contacts.get(position), holder);
               } else if(contacts.get(position).getName().equals("Bird")){
-                  String URL = "https://some-random-api.ml/img/birb";
-                  contacts.get(position).changeImage(URL, "link");
+                  contacts.get(position).changeImage();
                   setUpGlide(contacts.get(position), holder);
               }
           }

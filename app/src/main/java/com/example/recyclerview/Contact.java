@@ -20,11 +20,15 @@ public class Contact {
     private String email;
     private String imageUrl;
     private Context context;
-    public Contact(String name, String email, String imageUrl, Context context) {
+    private String nameOfLink;
+    private String APILink;
+    public Contact(String name, String email, String imageUrl, Context context, String nameOfLink, String APILink) {
         this.name = name;
         this.email = email;
         this.imageUrl = imageUrl;
         this.context = context;
+        this.nameOfLink = nameOfLink;
+        this.APILink = APILink;
     }
 
     public String getName() {
@@ -59,11 +63,13 @@ public class Contact {
                 ", imageUrl='" + imageUrl + '\'' +
                 '}';
     }
-    public void changeImage(String URL, String nameOfLink){
+    public void changeImage(){
+        System.out.println(imageUrl);
+        System.out.println(nameOfLink);
         RequestQueue requestQueue= Volley.newRequestQueue(context);
         JsonObjectRequest objectRequest = new JsonObjectRequest(
                 Request.Method.GET,
-                URL,
+                APILink,
                 null,
                 new Response.Listener<JSONObject>() {
                     @Override
